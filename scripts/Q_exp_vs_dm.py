@@ -21,6 +21,7 @@ with bigfile.File(qexp_path) as bf:
 
 # Smooth
 qexp_smooth_ = dens_weight_smooth( qexp_rfield, dens_rfield, nmesh=1536, num_threads=64 ) 
+qexp_smooth  = np.asarray( qexp_smooth_ )
 
 # Expansion term VS dark matter density
 Ndens       = 24
@@ -32,7 +33,7 @@ bostd       = np.zeros(Ndens)
 for i in range(Ndens):
     lbound    = densbins[i]
     ubound    = densbins[i+1]
-    ratio_tem = qexp_smooth_[(dens_rfield>=lbound)&(dens_rfield<ubound)]
+    ratio_tem = qexp_smooth[(dens_rfield>=lbound)&(dens_rfield<ubound)]
     mean[i]   = np.mean( ratio_tem )
     upstd[i]  = np.std( ratio_tem[ratio_tem>mean[i]],ddof=1 )
     bostd[i]  = np.std( ratio_tem[ratio_tem<mean[i]],ddof=1 )
