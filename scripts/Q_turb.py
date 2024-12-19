@@ -103,7 +103,7 @@ scale_fac  = 1/(1.+zz)
 
 # Load the velocity field
 vel_meshs = {}
-vel_path  = '/media/hep-cosmo/data'+simulation+run+redshift+'/vel_fields/'+matter+'/vel_field_pcs_'
+vel_path  = '/...'+simulation+run+redshift+'/vel_fields/'+matter+'/vel_field_pcs_'
 for i in range(3):
   vel_meshs[i] = BigFileMesh(vel_path+str(i)+'.bigfile', 'Field', comm=comm)
 
@@ -114,7 +114,7 @@ Qturb_rfield = (0.5*w2 - ss)/scale_fac
 Qturb_mesh   = FieldMesh( Qturb_rfield )
 
 # Save
-Qturb_mesh.save('/media/hep-cosmo/data'+simulation+run+redshift+'/qturb_fields/'+matter+'/qturb_field_pcs.bigfile')
+Qturb_mesh.save('/...'+simulation+run+redshift+'/qturb_fields/'+matter+'/qturb_field_pcs.bigfile')
 
 
 
