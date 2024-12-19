@@ -25,7 +25,8 @@ with bigfile.File(qgrav_path) as bf:
     qgrav_rfield = bf['Field'][:].reshape(shape)
 
 # Smooth
-qgrav_smooth = dens_weight_smooth( qgrav_rfield, dens_rfield, nmesh=1536, num_threads=64 ) 
+qgrav_smooth_ = dens_weight_smooth( qgrav_rfield, dens_rfield, nmesh=1536, num_threads=64 ) 
+qgrav_smooth  = np.asarray( qgrav_smooth_ )
 
 # gravitational term VS dark matter density
 Ndens       = 24
