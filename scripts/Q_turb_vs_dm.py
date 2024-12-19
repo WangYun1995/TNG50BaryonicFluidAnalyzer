@@ -10,8 +10,8 @@ redshift   = "/z0"
 matter     = "gas"      
 
 # Load the fields
-dens_path  = '/media/hep-cosmo/data'+simulation+run+redshift+'/dens_fields/dm/dens_field_pcs.bigfile'
-qturb_path = '/media/hep-cosmo/data'+simulation+run+redshift+'/qturb_fields/'+matter+'/qturb_field_pcs.bigfile'
+dens_path  = '/...'+simulation+run+redshift+'/dens_fields/dm/dens_field_pcs.bigfile'
+qturb_path = '/...'+simulation+run+redshift+'/qturb_fields/'+matter+'/qturb_field_pcs.bigfile'
 with bigfile.File(dens_path) as bf:
     shape       = bf['Field'].attrs['ndarray.shape']
     dens_rfield = bf['Field'][:].reshape(shape)
