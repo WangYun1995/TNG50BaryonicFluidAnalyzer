@@ -21,9 +21,9 @@ def print_status(comm,start_time,message):
         print('%d\ts: %s' % (elapsed_time,message))
 
 # Load the mesh
-path_mesh     = '/media/hep-cosmo/data'+simulation+run+redshift+"/"+field+'_fields/'+matter+'/'+field+'_turb_pcs_'
-path_maskmesh = '/media/hep-cosmo/data'+simulation+run+redshift+'/dens_fields/dm/dens_field_pcs.bigfile'
-path_wmesh    = '/media/hep-cosmo/data'+simulation+run+redshift+'/dens_fields/gas/dens_field_pcs.bigfile'
+path_mesh     = '/...'+simulation+run+redshift+"/"+field+'_fields/'+matter+'/'+field+'_turb_pcs_'
+path_maskmesh = '/...'+simulation+run+redshift+'/dens_fields/dm/dens_field_pcs.bigfile'
+path_wmesh    = '/...'+simulation+run+redshift+'/dens_fields/gas/dens_field_pcs.bigfile'
 maskmesh      = BigFileMesh(path_maskmesh, 'Field', comm=comm)
 wmesh         = BigFileMesh(path_wmesh, 'Field', comm=comm)
 
